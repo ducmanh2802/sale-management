@@ -108,7 +108,7 @@ function Create(props) {
         });
         Swal.fire({
           icon: "success",
-          title: "đã đạo thêm sản phẩm",
+          title: "đã tạo thêm sản phẩm",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -117,7 +117,7 @@ function Create(props) {
       })
       .catch((error) => {
         console.log("aaaaaaaaaaaaaaaa");
-        if (error.response.data.mess == " error : code trung ") {
+        if (error.response.data.mess == " error : code trùng ") {
           console.log("ccc");
           Swal.fire({
             icon: "error",
@@ -130,7 +130,7 @@ function Create(props) {
           console.log("ttttt");
           Swal.fire({
             icon: "error",
-            title: "tên không được chống",
+            title: "tên không được trống",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -139,7 +139,7 @@ function Create(props) {
           console.log("ttttt");
           Swal.fire({
             icon: "error",
-            title: "nhà cung cấp không được chống",
+            title: "nhà cung cấp không được trống",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -157,7 +157,7 @@ function Create(props) {
           console.log("lllll");
           Swal.fire({
             icon: "error",
-            title: "loại không được chống",
+            title: "loại không được trống",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -166,7 +166,7 @@ function Create(props) {
           console.log("nnnnn");
           Swal.fire({
             icon: "error",
-            title: "nhãn hiệu không được chống",
+            title: "nhãn hiệu không được trống",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -575,7 +575,7 @@ function Create(props) {
               <CCardBody>
                 <CFormGroup>
                   <CFormGroup>
-                  
+
                         <CInputFile
                           className=" px-4"
                           onChange={handleImage}
@@ -587,7 +587,7 @@ function Create(props) {
                           style={checkImage}
                           src={`${process.env.PUBLIC_URL}/image/${image}`}
                         />
-                    
+
                   </CFormGroup>
                 </CFormGroup>
               </CCardBody>

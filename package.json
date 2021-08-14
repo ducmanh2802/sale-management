@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-select": "^4.3.1",
+    "reactjs-localstorage": "^1.0.1"
+  }
+}
