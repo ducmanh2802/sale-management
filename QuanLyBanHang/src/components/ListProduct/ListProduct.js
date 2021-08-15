@@ -45,8 +45,8 @@ function ListProduct(props) {
   const [total,setTotal] = useState(1);
   const [filterCategory, setFilterOptionCategory] = useState([{value:"", label:"tất cả"}]);
   const [categories, setCategories] = useState([]);
-  
-  
+
+
   const config = {
     method: 'get',
     url: `http://localhost:8080/api/v1/productSearch?keyword=${search}&filter=${filter}&pageNo=${pageNo}&pageSize=${pageSize}`,
@@ -141,7 +141,7 @@ useEffect(() => {
   const changeFilter =(event)=>{
     setFilter(event.value)
     setPageNo(1);
-  
+
     console.log(event.value)
   }
   const cancel = (e) => {
@@ -152,7 +152,7 @@ useEffect(() => {
   };
 
   return (
-    
+
     <>
       <div>
       <CRow>
@@ -165,17 +165,17 @@ useEffect(() => {
                 placeholder="Tìm kiếm theo tên sản phẩm, mã sản phẩm"
                 value={search}
                 onChange={changeSearch}
-              />  
+              />
 
             </CFormGroup>
 
               </CCol>
               <CCol xs="4">
-              <Select placeholder="Loại danh mục"  options={filterCategory} onChange={changeFilter} />  
+              <Select placeholder="Loại danh mục"  options={filterCategory} onChange={changeFilter} />
               </CCol>
             </CRow>
-         
-          </CCol>   
+
+          </CCol>
           <CCol className="px-0 d-flex justify-content-end" xs="12" sm="5">
           <CCol xs="6"  sm="4" >
           <CButton onClick={addCategory} style={{background:"#0089ff"}}>
@@ -189,7 +189,7 @@ useEffect(() => {
 
         <div className="row">
           <table className=" table" >
-              
+
             <thead>
               <tr>
                 <th>Mã</th>
@@ -198,15 +198,17 @@ useEffect(() => {
                 <th>Loại</th>
                 <th>Nhãn hiệu</th>
                 <th>Số lượng</th>
+                <th>Trạng thái</th>
+                <th>Thời gian bảo hành</th>
                 <th>Ngày tạo</th>
               </tr>
             </thead>
             <tbody >
             {/* {currentPosts.map((item)  */}
               {product.map((item) => (
-              
+
                  <tr key={item.id} style={{ cursor: "pointer" }} onClick={() => updateCategory(item.id)} className="lits">
-             
+
                    <td>
                     {item.code}
                   </td>
@@ -215,6 +217,8 @@ useEffect(() => {
                   <td>{item.categoryId}</td>
                   <td>{item.brandID}</td>
                   <td>{item.numberProduct}</td>
+                  <td style={{color:"#60a917"}}>Đang giao dịch</td>
+                  <td >2{item.warrantyMonths}  tháng</td>
                   <td>{item.createdDate}</td>
                   <td>
                   </td>
@@ -224,10 +228,10 @@ useEffect(() => {
               ))}
             </tbody>
           </table>
-          
-       
+
+
         </div>
-        <div className="row"> 
+        <div className="row">
 
         <CPagination
             activePage={pageNo}
@@ -236,7 +240,7 @@ useEffect(() => {
           />
 
         </div>
-    
+
       </div>
     </>
   );

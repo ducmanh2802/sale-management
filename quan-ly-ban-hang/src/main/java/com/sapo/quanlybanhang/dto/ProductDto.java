@@ -23,6 +23,8 @@ public class ProductDto {
 
     private float price;
 
+    private int warrantyMonths;
+
     private String supplierId;
 
     private String description;

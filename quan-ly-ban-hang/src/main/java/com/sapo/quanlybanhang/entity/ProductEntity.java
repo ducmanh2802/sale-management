@@ -45,7 +45,10 @@ public class ProductEntity {
     @Column(name = "price")
     private Long price;
 
-    @Column(name = "decription")
+    @Column(name = "warranty_months")
+    private int warrantyMonths;
+
+    @Column(name = "description")
     private String description;
     @Column(name = "created_date")
     @CreationTimestamp

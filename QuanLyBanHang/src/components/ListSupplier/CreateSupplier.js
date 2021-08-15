@@ -40,15 +40,15 @@ function Create(props) {
       createdDate: createdDate,
       description: description,
     };
-  
+
 var data = JSON.stringify(supplier)
 
 
     ApiQuan('post',`suppliers`,data).then((item) => {
-      
+
     Swal.fire({
       icon: 'success',
-      title: 'đã đạo thêm nhà cung cấp',
+      title: 'đã tạo thêm nhà cung cấp',
       showConfirmButton: false,
       timer: 1500
     })
@@ -107,7 +107,7 @@ var data = JSON.stringify(supplier)
     }
 
     const changeonBlurEmail = (event)=>{
-     
+
 
       if((/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(event.target.value)==false)){
         setMesage({
@@ -206,7 +206,7 @@ var data = JSON.stringify(supplier)
                     id="vat"
                     placeholder="nhập giá"
                     onChange={changeAddress}
-                    
+
                   />
                   {/* <span style={{color:"red"}}> {message.price}</span> */}
                 </CFormGroup>
@@ -272,10 +272,10 @@ var data = JSON.stringify(supplier)
            </CCol>
 
            </CRow>
-           
+
          </CCol>
        </CRow>
-      
+
       </div>
     </div>
   );

@@ -130,8 +130,8 @@ const config1 = {
               Tạo
             </CButton>
           </CFormGroup>
-         
-          
+
+
           </CCol>
         </CRow> */}
         <CRow>
@@ -144,26 +144,29 @@ const config1 = {
                 placeholder="Tìm kiếm mã, số điện thoại,địa chỉ"
                 onChange={changeSearch}
                 value={search}
-              /> 
+              />
 
             </CFormGroup>
 
               </CCol>
               {/* <CCol xs="4">
-              <Select placeholder="Loại danh mục"  options={filterCategory} onChange={changeFilter} />  
+              <Select placeholder="Loại danh mục"  options={filterCategory} onChange={changeFilter} />
               </CCol> */}
             </CRow>
-         
-          </CCol>   
+
+          </CCol>
           <CCol className="px-0 d-flex justify-content-end" xs="12" sm="5">
           <CCol xs="6"  sm="4" >
           <CButton onClick={addCategory} style={{background:"#0089ff"}}>
-           Tạo sản phẩm
+           Tạo nhà cung cấp
             </CButton>
           </CCol>
           </CCol>
         </CRow>
-
+              <div className="dataImportExport">
+                <button  style={{border : "none"}} >Import</button>
+                <button style={{border : "none"}}>Export</button>
+              </div>
         <div className="row">
           <table className=" table table-striped table-bordered">
             <thead>
@@ -173,6 +176,7 @@ const config1 = {
                 <th>Email</th>
                 <th>Địa chỉ</th>
                 <th>Ngày tạo</th>
+                <th>Trạng thái</th>
               </tr>
             </thead>
             <tbody>
@@ -187,6 +191,7 @@ const config1 = {
                   <td>{item.email}</td>
                   <td>{item.address}</td>
                   <td>{item.createdDate}</td>
+                  <td style={{color:"#60a917"}}>Đang giao dịch</td>
                 </tr>
               ))}
             </tbody>
